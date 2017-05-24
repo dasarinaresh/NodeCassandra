@@ -6,3 +6,41 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* #firstline {
+  width: 100px;
+  height: 100px;
+  border: 1px solid red; * for viewing purposes *
+  text-align: center; * center the divs *
+  font-size: 0;
+} */
+
+#firstline .line1{
+	display: inline-block;
+	vertical-align: top;
+	padding-left: 10px;
+}
+
+#select{
+	display: none;
+}
+
+#insert{
+	display: none;
+}
+
+#submitdiv{
+	height: 50px;
+}
+#selSubmit{
+	
+	background-color:aqua;
+	padding-left:0px;
+	padding-top: 0px;
+}
+
+#insSubmit{
+	background-color:aqua;
+	padding-left:0px;
+	padding-top: 0px;
+}

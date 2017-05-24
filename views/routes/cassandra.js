@@ -9,12 +9,10 @@ function dbconnect(){
 	cassandraClient= new cassandra.Client({contactPoints:['127.0.0.1']});
 	cassandraClient.connect(function(err,res){
 		if(err){
-			res.render("Error in connecting to DB");
+			res.end("Error in connecting to DB");
 			console.log(err);
 		}
 		console.log("Connection established");
-//		console.log(cassandraClient);
-		console.log();
 		
 	});
 	

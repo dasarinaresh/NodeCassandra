@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href=".\public\stylesheets\style.css">
+<title>DB Connect UI</title>
+</head>
+<body>
+	<h1>Cassandr DB Connect UI</h1>
+	<div id='title'>
+		<div id='firstline'>
+			<div class='line1' id='database'>
+				<h4>
+					Database: <select name="DataBase" id='DataBase'>
+						<option value="None selected">Select a Database</option>
+						<option value="testkeyspace">testkeyspace</option>
+
+					</select>
+				</h4>
+			</div>
+			<div class='line1' id='tablenames'>
+				<h4>
+					Table: <select name="table" id='table'>
+						<option value="None selected">Select a Table</option>
+						<option value="testdb">testdb</option>
+
+					</select>
+				</h4>
+			</div>
+			<div class='line1' id='ddloptions'>
+				<h4>
+					Select<input type="radio" name="ddl" id='selectRadio'>
+					Insert<input type="radio" name="ddl" id='insertRadio'>
+				</h4>
+			</div>
+		</div>
+
+		<div id='select'>
+			<div id='fldnames'>
+				<h3>Field Names:</h3>
+			</div>
+			<select id='selectfld' name="fieldNames" multiple>
+				<option value="None selected">None</option>
+				<option value="empid">empid</option>
+				<option value="empname">empname</option>
+				<option value="empadd">empaddress</option>
+				<option value="all">all</option>
+			</select>
+			<div id='submitdiv'>
+				<button id='selSubmit'>Submit</button>
+			</div>
+		</div>
+		<div id='insert'>
+			Employee Id: <input type="number" name="empid"> Employee
+			Name: <input type="text" name="empname"> Employee Location: <input
+				type="text" name="loc">
+
+			<div id='submitdiv'>
+				<button id='insSubmit'>Submit</button>
+			</div>
+		</div>
+	</div>
+</body>
+<script src=".\myscript.js"></script>
+</html>
