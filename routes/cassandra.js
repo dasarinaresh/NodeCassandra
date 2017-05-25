@@ -21,13 +21,31 @@ exports.select=function(req,res){
 	
 	if(cassandraClient===null || !cassandraClient.connected ){
 		console.log("Connection not initialized. Calling connect");
-		dbconnect();
+//		dbconnect();
 //		console.log(status);
 	}
-	    var jsontext = JSON.parse(req.params.flds);
+	    console.log(req.query.flds);
+	    console.log(typeof req.query.flds);
+	    var jsontext = JSON.parse("{ \"dbname\":\"Select a Database\",\"tablename\":\"Select a Table\",\"fieldnames\":[\"empname\"]}");
 	    console.log(jsontext);
-		var query = 'SELECT * FROM testkeyspace.testdb';
-		cassandraClient.execute(query,function(err,result){
+	    console.log(typeof jsontext);
+//		var query = 'SELECT * FROM testkeyspace.testdb';
+		var query = 'SELECT';
+		var fieldnames = jsontext["fieldnames"];
+		console.log(fieldnames);
+		console.log(jsontext.fieldnames);
+		
+		for(var i in fieldnames){
+			query = query + " " +fieldnames[i];
+		}
+		
+		
+/*		for(var i=0;i<.length;i++){
+			query = query + " " +jsontext.fieldnames[i];
+		}*/
+		query = query + " FROM " + jsontext.dbname + "." + jsontext.tablename;
+		console.log(query);
+/*		cassandraClient.execute(query,function(err,result){
 			if(err){
 				console.log(err);
 			}
@@ -38,7 +56,7 @@ exports.select=function(req,res){
 			console.log(row.dept);
 			console.log(result);
 			res.end(JSON.stringify(result.rows));
-		});
+		});*/
 	
 };
 

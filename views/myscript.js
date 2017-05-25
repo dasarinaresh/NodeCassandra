@@ -53,17 +53,20 @@ document.getElementById('selSubmit').onclick = function(){
 	var tblname = sel.options[sel.selectedIndex].text;
 //	alert(tblname);
 //	alert(dbname);
-	var fieldnames = [];
-	var jsonText = '{ "dbname"'+':"'+dbname+'","tablename":"'+tblname+'","fieldnames" : [';
+	var jsonText = '{ "dbname"'+':"'+dbname+'","tablename":"'+tblname+'","fieldnames":[';
+	var spchar = ',';
 	for (i = 0; i < items.selectedOptions.length; i++) {
-		fieldnames.push(items.selectedOptions[i].text);
-		jsonText = jsonText + '{"'+items.selectedOptions[i].text +'":"'+items.selectedOptions[i].text+'"},';
+		if(i === items.selectedOptions.length -1 ){
+			spchar='';
+		}		
+		jsonText = jsonText + '"'+items.selectedOptions[i].text+'"'+spchar;
 		
 	}
 	jsonText = jsonText + ']}';
 //	alert(jsonText);
 	var flds = JSON.stringify(jsonText);
-	var req = new XMLHttpRequest();
-	req.open('GET', "localhost:5000/cassandra/select/:"+flds, true);
+	var req =  new XMLHttpRequest();
+	req.open('GET', "http://localhost:5000/cassandra/select/?flds="+flds);
 	req.send();
+//	$.get("/cassandra/select/:flds",flds);
 }

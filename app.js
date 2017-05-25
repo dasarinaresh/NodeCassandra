@@ -32,7 +32,7 @@ if ('development' == app.get('env')) {
 
 app.get('/', routes.index);
 app.get('/users', user.list);
-app.get('/cassandra/select/:flds',cassandra.select);
+app.get('/cassandra/select/',cassandra.select);
 app.post('/cassandra/insert/:query',cassandra.insert);
 app.post('/cassandra/update',cassandra.insert);
 
