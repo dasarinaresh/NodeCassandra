@@ -7,8 +7,8 @@
 6 silly lifecycle NodeCassandra@0.0.1~prestart: no script for prestart, continuing
 7 info lifecycle NodeCassandra@0.0.1~start: NodeCassandra@0.0.1
 8 verbose lifecycle NodeCassandra@0.0.1~start: unsafe-perm in lifecycle true
-9 verbose lifecycle NodeCassandra@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jeff/Documents/workspace/NodeCassandra/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
-10 verbose lifecycle NodeCassandra@0.0.1~start: CWD: /Users/jeff/Documents/workspace/NodeCassandra
+9 verbose lifecycle NodeCassandra@0.0.1~start: PATH: /usr/local/lib/node_modules/npm/bin/node-gyp-bin:/Users/jeff/Documents/gitrepos/NodeCassandra/node_modules/.bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+10 verbose lifecycle NodeCassandra@0.0.1~start: CWD: /Users/jeff/Documents/gitrepos/NodeCassandra
 11 silly lifecycle NodeCassandra@0.0.1~start: Args: [ '-c', 'node app.js' ]
 12 silly lifecycle NodeCassandra@0.0.1~start: Returned: code: 1  signal: null
 13 info lifecycle NodeCassandra@0.0.1~start: Failed to exec start script
@@ -23,7 +23,7 @@
 14 verbose stack     at maybeClose (internal/child_process.js:886:16)
 14 verbose stack     at Process.ChildProcess._handle.onexit (internal/child_process.js:226:5)
 15 verbose pkgid NodeCassandra@0.0.1
-16 verbose cwd /Users/jeff/Documents/workspace/NodeCassandra
+16 verbose cwd /Users/jeff/Documents/gitrepos/NodeCassandra
 17 error Darwin 16.5.0
 18 error argv "/usr/local/bin/node" "/usr/local/bin/npm" "start"
 19 error node v6.10.3

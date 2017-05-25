@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 
 /*function showfields(){
@@ -58,15 +58,22 @@ document.getElementById('selSubmit').onclick = function(){
 	for (i = 0; i < items.selectedOptions.length; i++) {
 		if(i === items.selectedOptions.length -1 ){
 			spchar='';
-		}		
+		}
 		jsonText = jsonText + '"'+items.selectedOptions[i].text+'"'+spchar;
-		
+
 	}
 	jsonText = jsonText + ']}';
 //	alert(jsonText);
 	var flds = JSON.stringify(jsonText);
 	var req =  new XMLHttpRequest();
-	req.open('GET', "http://localhost:5000/cassandra/select/?flds="+flds);
+	req.onreadystatechange = function(){
+		if(req.readyState === 4){
+			console.log(req.response);
+		}
+	}
+	req.open('GET', "http://localhost:5000/cassandra/select/?flds="+jsonText);
 	req.send();
 //	$.get("/cassandra/select/:flds",flds);
+// window.location.replace("/result");
+window.location.assign("/result");
 }

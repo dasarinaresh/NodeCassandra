@@ -35,6 +35,7 @@ app.get('/users', user.list);
 app.get('/cassandra/select/',cassandra.select);
 app.post('/cassandra/insert/:query',cassandra.insert);
 app.post('/cassandra/update',cassandra.insert);
+app.get('/result',cassandra.result);
 
 //connect.dbconnect();
 
